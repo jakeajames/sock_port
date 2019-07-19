@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8288501222E07303005D10FC /* kernel_memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 8288501022E07303005D10FC /* kernel_memory.c */; };
 		8288501522E07C15005D10FC /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 8288501322E07C14005D10FC /* offsets.m */; };
+		82E9B71522E24BAD0016AA39 /* iosurface.c in Sources */ = {isa = PBXBuildFile; fileRef = 82E9B71422E24BAD0016AA39 /* iosurface.c */; };
 		82F179F122DF4ED700231F8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F179F022DF4ED700231F8C /* AppDelegate.m */; };
 		82F179F422DF4ED700231F8C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F179F322DF4ED700231F8C /* ViewController.m */; };
 		82F179F722DF4ED700231F8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F179F522DF4ED700231F8C /* Main.storyboard */; };
@@ -43,6 +44,8 @@
 		8288501122E07303005D10FC /* kernel_memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kernel_memory.h; sourceTree = "<group>"; };
 		8288501322E07C14005D10FC /* offsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
 		8288501422E07C14005D10FC /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
+		82E9B71322E24BAC0016AA39 /* iosurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iosurface.h; sourceTree = "<group>"; };
+		82E9B71422E24BAD0016AA39 /* iosurface.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iosurface.c; sourceTree = "<group>"; };
 		82F179EC22DF4ED700231F8C /* sock_port.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sock_port.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F179EF22DF4ED700231F8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		82F179F022DF4ED700231F8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				8288501122E07303005D10FC /* kernel_memory.h */,
 				8288501422E07C14005D10FC /* offsets.h */,
 				8288501322E07C14005D10FC /* offsets.m */,
+				82E9B71422E24BAD0016AA39 /* iosurface.c */,
+				82E9B71322E24BAC0016AA39 /* iosurface.h */,
 				82F179F522DF4ED700231F8C /* Main.storyboard */,
 				82F179F822DF4ED700231F8C /* Assets.xcassets */,
 				82F179FA22DF4ED700231F8C /* LaunchScreen.storyboard */,
@@ -300,6 +305,7 @@
 				82F179FF22DF4ED700231F8C /* main.m in Sources */,
 				82F179F122DF4ED700231F8C /* AppDelegate.m in Sources */,
 				82F17A2322DF4EF100231F8C /* exploit.c in Sources */,
+				82E9B71522E24BAD0016AA39 /* iosurface.c in Sources */,
 				8288501522E07C15005D10FC /* offsets.m in Sources */,
 				8288501222E07303005D10FC /* kernel_memory.c in Sources */,
 			);
