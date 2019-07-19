@@ -5,44 +5,6 @@
 #define IOSURFACE_EXTERN
 #include "iosurface.h"
 
-// ---- IOSurface types ---------------------------------------------------------------------------
-
-struct _IOSurfaceFastCreateArgs {
-	uint64_t address;
-	uint32_t width;
-	uint32_t height;
-	uint32_t pixel_format;
-	uint32_t bytes_per_element;
-	uint32_t bytes_per_row;
-	uint32_t alloc_size;
-};
-
-struct IOSurfaceLockResult {
-	uint8_t _pad1[0x18];
-	uint32_t surface_id;
-	uint8_t _pad2[0xdd0-0x18-0x4];
-};
-
-struct IOSurfaceValueArgs {
-	uint32_t surface_id;
-	uint32_t _out1;
-	union {
-		uint32_t xml[0];
-		char string[0];
-	};
-};
-
-struct IOSurfaceValueArgs_string {
-	uint32_t surface_id;
-	uint32_t _out1;
-	uint32_t string_data;
-	char null;
-};
-
-struct IOSurfaceValueResultArgs {
-	uint32_t out;
-};
-
 // ---- Global variables --------------------------------------------------------------------------
 
 // Is the IOSurface subsystem initialized?
@@ -106,7 +68,7 @@ IOSurface_deinit() {
  * Description:
  * 	A wrapper around IOSurfaceRootUserClient::set_value().
  */
-static bool
+bool
 IOSurface_set_value(const struct IOSurfaceValueArgs *args, size_t args_size) {
 	struct IOSurfaceValueResultArgs result;
 	size_t result_size = sizeof(result);

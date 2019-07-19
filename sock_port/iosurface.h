@@ -105,6 +105,47 @@ bool IOSurface_spray_remove_array(uint32_t array_id);
  */
 bool IOSurface_spray_clear(uint32_t array_count);
 
+// ---- IOSurface types ---------------------------------------------------------------------------
+
+struct _IOSurfaceFastCreateArgs {
+    uint64_t address;
+    uint32_t width;
+    uint32_t height;
+    uint32_t pixel_format;
+    uint32_t bytes_per_element;
+    uint32_t bytes_per_row;
+    uint32_t alloc_size;
+};
+
+struct IOSurfaceLockResult {
+    uint8_t _pad1[0x18];
+    uint32_t surface_id;
+    uint8_t _pad2[0xdd0-0x18-0x4];
+};
+
+struct IOSurfaceValueArgs {
+    uint32_t surface_id;
+    uint32_t _out1;
+    union {
+        uint32_t xml[0];
+        char string[0];
+    };
+};
+
+struct IOSurfaceValueArgs_string {
+    uint32_t surface_id;
+    uint32_t _out1;
+    uint32_t string_data;
+    char null;
+};
+
+struct IOSurfaceValueResultArgs {
+    uint32_t out;
+};
+
+
+bool IOSurface_set_value(const struct IOSurfaceValueArgs *args, size_t args_size);
+
 #undef extern
 
 #endif
