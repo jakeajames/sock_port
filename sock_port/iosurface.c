@@ -36,7 +36,9 @@ IOSurface_init() {
 	}
 	struct _IOSurfaceFastCreateArgs create_args = { .alloc_size = 0x4000, };
 	struct IOSurfaceLockResult lock_result;
-	size_t lock_result_size = sizeof(lock_result);
+    
+    extern uint32_t create_outsize;
+	size_t lock_result_size = create_outsize;
 	kr = IOConnectCallMethod(
 			IOSurfaceRootUserClient,
 			6, // create_surface_client_fast_path

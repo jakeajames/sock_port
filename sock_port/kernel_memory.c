@@ -84,10 +84,9 @@ void wk64(uint64_t where, uint64_t what) {
 }
 
 uint64_t find_port(mach_port_name_t port, uint64_t task_self) {
-    uint64_t task_addr = rk64(task_self + 0x68);
-    uint64_t itk_space = rk64(task_addr + 0x300);
-    
-    uint64_t is_table = rk64(itk_space + 0x20);
+    uint64_t task_addr = rk64(task_self + koffset(KSTRUCT_OFFSET_IPC_PORT_IP_KOBJECT));
+    uint64_t itk_space = rk64(task_addr + koffset(KSTRUCT_OFFSET_TASK_ITK_SPACE));
+    uint64_t is_table = rk64(itk_space + koffset(KSTRUCT_OFFSET_IPC_SPACE_IS_TABLE));
     
     uint32_t port_index = port >> 8;
     const int sizeof_ipc_entry_t = 0x18;
