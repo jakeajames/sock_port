@@ -118,7 +118,9 @@ struct _IOSurfaceFastCreateArgs {
 };
 
 struct IOSurfaceLockResult {
-    uint8_t _pad1[0x18];
+    uint64_t addr1;
+    uint64_t addr2;
+    uint64_t addr3;
     uint32_t surface_id;
     uint8_t _pad2[0xdd0-0x18-0x4];
 };
