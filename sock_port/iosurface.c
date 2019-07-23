@@ -51,6 +51,9 @@ IOSurface_init() {
 		return false;
 	}
 	IOSurface_id = lock_result.surface_id;
+    if (!IOSurface_id) {
+        IOSurface_id = (uint32_t)lock_result.addr3;
+    }
 	IOSurface_initialized = true;
 	return true;
 }
