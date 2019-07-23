@@ -153,7 +153,7 @@ void offsets_init() {
         offsets = kstruct_offsets_12_0;
         
 #if __arm64e__
-        offsets[7] = 0x368;
+        offsets[8] = 0x368;
 #endif
         create_outsize = 0xdd0;
     }
