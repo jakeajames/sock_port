@@ -24,7 +24,8 @@ int kstruct_offsets_11_0[] = {
     0x20,  // KSTRUCT_OFFSET_TASK_VM_MAP,
     0x28,  // KSTRUCT_OFFSET_TASK_NEXT,
     0x30,  // KSTRUCT_OFFSET_TASK_PREV,
-    0x308, // KSTRUCT_OFFSET_TASK_ITK_SPACE
+    0xd8,  // KSTRUCT_OFFSET_TASK_ITK_SELF,
+    0x308, // KSTRUCT_OFFSET_TASK_ITK_SPACE,
     0x368, // KSTRUCT_OFFSET_TASK_BSD_INFO,
     
     0x0,   // KSTRUCT_OFFSET_IPC_PORT_IO_BITS,
@@ -63,7 +64,8 @@ int kstruct_offsets_11_3[] = {
     0x20,  // KSTRUCT_OFFSET_TASK_VM_MAP,
     0x28,  // KSTRUCT_OFFSET_TASK_NEXT,
     0x30,  // KSTRUCT_OFFSET_TASK_PREV,
-    0x308, // KSTRUCT_OFFSET_TASK_ITK_SPACE
+    0xd8,  // KSTRUCT_OFFSET_TASK_ITK_SELF,
+    0x308, // KSTRUCT_OFFSET_TASK_ITK_SPACE,
     0x368, // KSTRUCT_OFFSET_TASK_BSD_INFO,
     
     0x0,   // KSTRUCT_OFFSET_IPC_PORT_IO_BITS,
@@ -102,7 +104,8 @@ int kstruct_offsets_12_0[] = {
     0x20,  // KSTRUCT_OFFSET_TASK_VM_MAP,
     0x28,  // KSTRUCT_OFFSET_TASK_NEXT,
     0x30,  // KSTRUCT_OFFSET_TASK_PREV,
-    0x300, // KSTRUCT_OFFSET_TASK_ITK_SPACE
+    0xd8,  // KSTRUCT_OFFSET_TASK_ITK_SELF,
+    0x300, // KSTRUCT_OFFSET_TASK_ITK_SPACE,
     0x358, // KSTRUCT_OFFSET_TASK_BSD_INFO,
     
     0x0,   // KSTRUCT_OFFSET_IPC_PORT_IO_BITS,
@@ -164,7 +167,7 @@ void offsets_init() {
         offsets = kstruct_offsets_11_3;
         create_outsize = 0xbc8;
     } else if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11.0")) {
-        printf("[i] offsets selected for iOS 11.0 to 11.2.6\n");
+        printf("[i] offsets selected for iOS 11.0 to 11.0.3\n");
         offsets = kstruct_offsets_11_0;
         create_outsize = 0x6c8;
     } else {
